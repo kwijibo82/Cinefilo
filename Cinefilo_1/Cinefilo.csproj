@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E07D9B9D-0CCC-4D22-9363-BF19E068CAF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cinefilo_1</RootNamespace>
+    <AssemblyName>Cinefilo_1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BD\ACTORES.cs">
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDCinefilo.cs" />
+    <Compile Include="BdError.cs" />
+    <Compile Include="Formularios\FormActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormActor.Designer.cs">
+      <DependentUpon>FormActor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormActores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormActores.Designer.cs">
+      <DependentUpon>FormActores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormAltaTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormAltaTema.Designer.cs">
+      <DependentUpon>FormAltaTema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormAltaTipoPapel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormAltaTipoPapel.Designer.cs">
+      <DependentUpon>FormAltaTipoPapel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormAsignarPapeles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormAsignarPapeles.Designer.cs">
+      <DependentUpon>FormAsignarPapeles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormInici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormInici.Designer.cs">
+      <DependentUpon>FormInici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPelicula.Designer.cs">
+      <DependentUpon>FormPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPeliculas.Designer.cs">
+      <DependentUpon>FormPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormTemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormTemas.Designer.cs">
+      <DependentUpon>FormTemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormTiposPapel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormTiposPapel.Designer.cs">
+      <DependentUpon>FormTiposPapel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD\ModelCinefilo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCinefilo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD\ModelCinefilo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD\ModelCinefilo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCinefilo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BD\PAPEL.cs">
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD\PELICULAS.cs">
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BD\TEMAS.cs">
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD\TIPOS_PAPEL.cs">
+      <DependentUpon>ModelCinefilo.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios\FormActor.resx">
+      <DependentUpon>FormActor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormActores.resx">
+      <DependentUpon>FormActores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormAltaTema.resx">
+      <DependentUpon>FormAltaTema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormAltaTipoPapel.resx">
+      <DependentUpon>FormAltaTipoPapel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormAsignarPapeles.resx">
+      <DependentUpon>FormAsignarPapeles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormInici.resx">
+      <DependentUpon>FormInici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPelicula.resx">
+      <DependentUpon>FormPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPeliculas.resx">
+      <DependentUpon>FormPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormTemas.resx">
+      <DependentUpon>FormTemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormTiposPapel.resx">
+      <DependentUpon>FormTiposPapel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="BD\ModelCinefilo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCinefilo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BD\ModelCinefilo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCinefilo.edmx</DependentUpon>
+      <LastGenOutput>ModelCinefilo.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BD\ModelCinefilo.edmx.diagram">
+      <DependentUpon>ModelCinefilo.edmx</DependentUpon>
+    </None>
+    <None Include="BD\ModelCinefilo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCinefilo.edmx</DependentUpon>
+      <LastGenOutput>ModelCinefilo.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.ACTORES.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.cinefiloEntities.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.PAPEL.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.PELICULAS.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.TEMAS.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.BD.TIPOS_PAPEL.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Cinefilo_1.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Consultas\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

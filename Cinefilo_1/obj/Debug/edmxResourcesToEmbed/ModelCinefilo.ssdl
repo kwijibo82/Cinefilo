@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cinefiloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACTORES">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="dni" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="edad" Type="int" />
+    <Property Name="sexo" Type="nvarchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="PAPEL">
+    <Key>
+      <PropertyRef Name="dni" />
+      <PropertyRef Name="id_pelicula" />
+      <PropertyRef Name="id_tipo_papel" />
+    </Key>
+    <Property Name="dni" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="id_pelicula" Type="int" Nullable="false" />
+    <Property Name="id_tipo_papel" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PELICULAS">
+    <Key>
+      <PropertyRef Name="id_pelicula" />
+    </Key>
+    <Property Name="id_pelicula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="director" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TEMAS">
+    <Key>
+      <PropertyRef Name="id_tema" />
+    </Key>
+    <Property Name="id_tema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TEMAS_PEL">
+    <Key>
+      <PropertyRef Name="id_pelicula" />
+      <PropertyRef Name="id_tema" />
+    </Key>
+    <Property Name="id_pelicula" Type="int" Nullable="false" />
+    <Property Name="id_tema" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPOS_PAPEL">
+    <Key>
+      <PropertyRef Name="id_tipos" />
+    </Key>
+    <Property Name="id_tipos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_PAPEL_ACTORES">
+    <End Role="ACTORES" Type="Self.ACTORES" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTORES">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAPEL_PELICULAS">
+    <End Role="PELICULAS" Type="Self.PELICULAS" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PELICULAS">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAPEL_TIPOS_PAPEL">
+    <End Role="TIPOS_PAPEL" Type="Self.TIPOS_PAPEL" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOS_PAPEL">
+        <PropertyRef Name="id_tipos" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="id_tipo_papel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TEMAS_PEL_PELICULAS">
+    <End Role="PELICULAS" Type="Self.PELICULAS" Multiplicity="1" />
+    <End Role="TEMAS_PEL" Type="Self.TEMAS_PEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PELICULAS">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="TEMAS_PEL">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TEMAS_PEL_TEMAS">
+    <End Role="TEMAS" Type="Self.TEMAS" Multiplicity="1" />
+    <End Role="TEMAS_PEL" Type="Self.TEMAS_PEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEMAS">
+        <PropertyRef Name="id_tema" />
+      </Principal>
+      <Dependent Role="TEMAS_PEL">
+        <PropertyRef Name="id_tema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="cinefiloModelStoreContainer">
+    <EntitySet Name="ACTORES" EntityType="Self.ACTORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAPEL" EntityType="Self.PAPEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PELICULAS" EntityType="Self.PELICULAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEMAS" EntityType="Self.TEMAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEMAS_PEL" EntityType="Self.TEMAS_PEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOS_PAPEL" EntityType="Self.TIPOS_PAPEL" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PAPEL_ACTORES" Association="Self.FK_PAPEL_ACTORES">
+      <End Role="ACTORES" EntitySet="ACTORES" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAPEL_PELICULAS" Association="Self.FK_PAPEL_PELICULAS">
+      <End Role="PELICULAS" EntitySet="PELICULAS" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAPEL_TIPOS_PAPEL" Association="Self.FK_PAPEL_TIPOS_PAPEL">
+      <End Role="TIPOS_PAPEL" EntitySet="TIPOS_PAPEL" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TEMAS_PEL_PELICULAS" Association="Self.FK_TEMAS_PEL_PELICULAS">
+      <End Role="PELICULAS" EntitySet="PELICULAS" />
+      <End Role="TEMAS_PEL" EntitySet="TEMAS_PEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TEMAS_PEL_TEMAS" Association="Self.FK_TEMAS_PEL_TEMAS">
+      <End Role="TEMAS" EntitySet="TEMAS" />
+      <End Role="TEMAS_PEL" EntitySet="TEMAS_PEL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

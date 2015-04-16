@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cinefiloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACTORES">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="dni" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="sexo" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PAPEL" Relationship="Self.FK_PAPEL_ACTORES" FromRole="ACTORES" ToRole="PAPEL" />
+  </EntityType>
+  <EntityType Name="PAPEL">
+    <Key>
+      <PropertyRef Name="dni" />
+      <PropertyRef Name="id_pelicula" />
+      <PropertyRef Name="id_tipo_papel" />
+    </Key>
+    <Property Name="dni" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_pelicula" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo_papel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ACTORES" Relationship="Self.FK_PAPEL_ACTORES" FromRole="PAPEL" ToRole="ACTORES" />
+    <NavigationProperty Name="PELICULAS" Relationship="Self.FK_PAPEL_PELICULAS" FromRole="PAPEL" ToRole="PELICULAS" />
+    <NavigationProperty Name="TIPOS_PAPEL" Relationship="Self.FK_PAPEL_TIPOS_PAPEL" FromRole="PAPEL" ToRole="TIPOS_PAPEL" />
+  </EntityType>
+  <EntityType Name="PELICULAS">
+    <Key>
+      <PropertyRef Name="id_pelicula" />
+    </Key>
+    <Property Name="id_pelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="director" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PAPEL" Relationship="Self.FK_PAPEL_PELICULAS" FromRole="PELICULAS" ToRole="PAPEL" />
+    <NavigationProperty Name="TEMAS" Relationship="Self.TEMAS_PEL" FromRole="PELICULAS" ToRole="TEMAS" />
+  </EntityType>
+  <EntityType Name="TEMAS">
+    <Key>
+      <PropertyRef Name="id_tema" />
+    </Key>
+    <Property Name="id_tema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PELICULAS" Relationship="Self.TEMAS_PEL" FromRole="TEMAS" ToRole="PELICULAS" />
+  </EntityType>
+  <EntityType Name="TIPOS_PAPEL">
+    <Key>
+      <PropertyRef Name="id_tipos" />
+    </Key>
+    <Property Name="id_tipos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAPEL" Relationship="Self.FK_PAPEL_TIPOS_PAPEL" FromRole="TIPOS_PAPEL" ToRole="PAPEL" />
+  </EntityType>
+  <Association Name="FK_PAPEL_ACTORES">
+    <End Role="ACTORES" Type="Self.ACTORES" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTORES">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAPEL_PELICULAS">
+    <End Role="PELICULAS" Type="Self.PELICULAS" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PELICULAS">
+        <PropertyRef Name="id_pelicula" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="id_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAPEL_TIPOS_PAPEL">
+    <End Role="TIPOS_PAPEL" Type="Self.TIPOS_PAPEL" Multiplicity="1" />
+    <End Role="PAPEL" Type="Self.PAPEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOS_PAPEL">
+        <PropertyRef Name="id_tipos" />
+      </Principal>
+      <Dependent Role="PAPEL">
+        <PropertyRef Name="id_tipo_papel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEMAS_PEL">
+    <End Role="PELICULAS" Type="Self.PELICULAS" Multiplicity="*" />
+    <End Role="TEMAS" Type="Self.TEMAS" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="cinefiloEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACTORES" EntityType="Self.ACTORES" />
+    <EntitySet Name="PAPEL" EntityType="Self.PAPEL" />
+    <EntitySet Name="PELICULAS" EntityType="Self.PELICULAS" />
+    <EntitySet Name="TEMAS" EntityType="Self.TEMAS" />
+    <EntitySet Name="TIPOS_PAPEL" EntityType="Self.TIPOS_PAPEL" />
+    <AssociationSet Name="FK_PAPEL_ACTORES" Association="Self.FK_PAPEL_ACTORES">
+      <End Role="ACTORES" EntitySet="ACTORES" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAPEL_PELICULAS" Association="Self.FK_PAPEL_PELICULAS">
+      <End Role="PELICULAS" EntitySet="PELICULAS" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAPEL_TIPOS_PAPEL" Association="Self.FK_PAPEL_TIPOS_PAPEL">
+      <End Role="TIPOS_PAPEL" EntitySet="TIPOS_PAPEL" />
+      <End Role="PAPEL" EntitySet="PAPEL" />
+    </AssociationSet>
+    <AssociationSet Name="TEMAS_PEL" Association="Self.TEMAS_PEL">
+      <End Role="PELICULAS" EntitySet="PELICULAS" />
+      <End Role="TEMAS" EntitySet="TEMAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

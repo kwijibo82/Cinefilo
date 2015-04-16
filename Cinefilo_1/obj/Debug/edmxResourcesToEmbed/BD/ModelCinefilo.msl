@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cinefiloModelStoreContainer" CdmEntityContainer="cinefiloEntities">
+    <EntitySetMapping Name="ACTORES">
+      <EntityTypeMapping TypeName="cinefiloModel.ACTORES">
+        <MappingFragment StoreEntitySet="ACTORES">
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAPEL">
+      <EntityTypeMapping TypeName="cinefiloModel.PAPEL">
+        <MappingFragment StoreEntitySet="PAPEL">
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+          <ScalarProperty Name="id_tipo_papel" ColumnName="id_tipo_papel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PELICULAS">
+      <EntityTypeMapping TypeName="cinefiloModel.PELICULAS">
+        <MappingFragment StoreEntitySet="PELICULAS">
+          <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="director" ColumnName="director" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEMAS">
+      <EntityTypeMapping TypeName="cinefiloModel.TEMAS">
+        <MappingFragment StoreEntitySet="TEMAS">
+          <ScalarProperty Name="id_tema" ColumnName="id_tema" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOS_PAPEL">
+      <EntityTypeMapping TypeName="cinefiloModel.TIPOS_PAPEL">
+        <MappingFragment StoreEntitySet="TIPOS_PAPEL">
+          <ScalarProperty Name="id_tipos" ColumnName="id_tipos" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TEMAS_PEL" TypeName="cinefiloModel.TEMAS_PEL" StoreEntitySet="TEMAS_PEL">
+      <EndProperty Name="PELICULAS">
+        <ScalarProperty Name="id_pelicula" ColumnName="id_pelicula" />
+      </EndProperty>
+      <EndProperty Name="TEMAS">
+        <ScalarProperty Name="id_tema" ColumnName="id_tema" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

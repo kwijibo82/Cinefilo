@@ -1,0 +1,25 @@
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\Cinefilo_1.exe.config
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.exe
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\Cinefilo_1.exe
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\Cinefilo_1.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\EntityFramework.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\EntityFramework.SqlServer.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\EntityFramework.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\bin\Debug\EntityFramework.SqlServer.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.Formularios.FormActor.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormActores.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormAltaTema.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormAltaTipoPapel.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.Formularios.FormAsignarPapeles.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormInici.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormPelicula.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormPeliculas.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormTemas.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.FormTiposPapel.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo_1.Properties.Resources.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\Cinefilo_1\Cinefilo_1\obj\Debug\Cinefilo.csproj.GenerateResource.Cache
+\\psf\Home\Desktop\GitHub\Cinefilo\Cinefilo_1\bin\Debug\Cinefilo_1.exe.config
+\\psf\Home\Desktop\GitHub\Cinefilo\Cinefilo_1\obj\Debug\Cinefilo_1.exe
+\\psf\Home\Desktop\GitHub\Cinefilo\Cinefilo_1\obj\Debug\Cinefilo_1.pdb

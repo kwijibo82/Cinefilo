@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff55537ad93b4397b8accc94d1963ff7" Name="Diagram1">
+        <EntityTypeShape EntityType="cinefiloModel.ACTORES" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinefiloModel.PAPEL" Width="1.5" PointX="4.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinefiloModel.PELICULAS" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinefiloModel.TEMAS" Width="1.5" PointX="1.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinefiloModel.TIPOS_PAPEL" Width="1.5" PointX="5.375" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="cinefiloModel.FK_PAPEL_ACTORES" ManuallyRouted="false" />
+        <AssociationConnector Association="cinefiloModel.FK_PAPEL_PELICULAS" ManuallyRouted="false" />
+        <AssociationConnector Association="cinefiloModel.FK_PAPEL_TIPOS_PAPEL" ManuallyRouted="false" />
+        <AssociationConnector Association="cinefiloModel.TEMAS_PEL" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
